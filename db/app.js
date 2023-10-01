@@ -3,6 +3,7 @@ import knex from 'knex'
 import cors from 'cors'
 
 const app = express()
+app.use(express.json())
 app.use(cors())
 
 const corsOptions = {
@@ -19,12 +20,21 @@ const db = knex({
   }
 })
 
-app.get('/users', cors(corsOptions), async (req, res) => {
+app.get('/user', cors(corsOptions), async (req, res) => {
   try {
-    const users = await db.select('*').from('users')
-    res.json(users)
+    const userId = req.query.id
+    if (!userId) return res.status(400).send('User ID not provided')
+
+    const user = await db
+      .select('name', 'lastname', 'password', 'email')
+      .from('users')
+      .where({ id: userId })
+      .first()
+
+    if (!user) return res.status(404).send('User not found')
+    res.json(user)
   } catch (err) {
-    // console.error(err)
+    console.error(err)
     res.status(500).send(`Error: ${err}`)
   }
 })

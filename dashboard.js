@@ -1,3 +1,6 @@
+const userId = localStorage.getItem('userId')
+if (!userId) window.location.href = 'index.html'
+
 const body = document.querySelector('body')
 const sidebar = body.querySelector('nav')
 const toggle = body.querySelector('.toggle')
