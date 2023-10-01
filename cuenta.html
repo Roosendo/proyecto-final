@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Cuenta</h1>
+    </header>
+
+    <section id="account-info">
+        <!-- Aquí se mostrarán los datos de la cuenta -->
+    </section>
+
+    <section id="edit-form" style="display: none;">
+        <h2>Editar Información</h2>
+        <form id="edit-form">
+            <label for="username">Nombre:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </section>
+
+    <script>
+        // Datos de ejemplo
+        const accountData = {
+            username: 'UsuarioEjemplo',
+            email: 'usuario@ejemplo.com'
+        };
+
+        // Función para mostrar los datos de la cuenta
+        function showAccountInfo() {
+            const accountInfoSection = document.getElementById('account-info');
+            accountInfoSection.innerHTML = `
+                <h2>Datos de la Cuenta</h2>
+                <p><strong>Nombre de usuario:</strong> ${accountData.username}</p>
+                <p><strong>Correo electrónico:</strong> ${accountData.email}</p>
+                <button onclick="editAccount()">Editar</button>
+            `;
+        }
+
+        // Función para mostrar el formulario de edición
+        function editAccount() {
+            const accountInfoSection = document.getElementById('account-info');
+            const editFormSection = document.getElementById('edit-form');
+
+            accountInfoSection.style.display = 'none';
+            editFormSection.style.display = 'block';
+
+            // Llenar el formulario con los datos actuales
+            document.getElementById('username').value = accountData.username;
+            document.getElementById('email').value = accountData.email;
+        }
+
+        // Función para manejar la edición y guardar cambios
+        document.getElementById('edit-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtener los nuevos datos del formulario
+            const newUsername = document.getElementById('username').value;
+            const newEmail = document.getElementById('email').value;
+
+            // Actualizar los datos de la cuenta
+            accountData.username = newUsername;
+            accountData.email = newEmail;
+
+            // Volver a mostrar la información de la cuenta
+            showAccountInfo();
+
+            // Ocultar el formulario de edición
+            document.getElementById('account-info').style.display = 'block';
+            document.getElementById('edit-form').style.display = 'none';
+        });
+
+        // Inicializar la página mostrando la información de la cuenta
+        showAccountInfo();
+    </script>
+</body>
+</html>
