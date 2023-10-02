@@ -89,7 +89,7 @@
                             document.getElementById("cerrarSesion").addEventListener("click", function() {
                                 // Realiza las acciones de cierre de sesión aquí
                                 // Redirige al usuario a la página de inicio de sesión
-                                localStorage.clear()
+                                localStorage.removeItem('userId')
                                 window.location.href = "index.html";
                             });
                     </script>
