@@ -27,8 +27,8 @@ modeSwitch.addEventListener('click', () => {
   }
 })
 
-const createUser = async () => {
-  await fetch('http://localhost:3000/users', {
+const getUser = async () => {
+  await fetch(`http://localhost:3000/user?id=${userId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -36,14 +36,12 @@ const createUser = async () => {
   })
     .then(response => response.json())
     .then(data => {
-      data.forEach(user => {
-        const p = document.createElement('p')
-        p.innerHTML = `
-          <p>Name: ${user.name} || Email: ${user.email}</p>
-        `
-        return home.appendChild(p)
-      })
+      const p = document.createElement('p')
+      p.innerHTML = `
+        <p>Name: ${data.name} || Email: ${data.email}</p>
+      `
+      return home.appendChild(p)
     })
 }
 
-createUser()
+getUser()

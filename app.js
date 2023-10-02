@@ -15,12 +15,8 @@ document.getElementById('loginForm').addEventListener('submit', async () => {
 
       .then(response => response.json())
       .then(data => {
-        if (data.userId) {
-          localStorage.setItem('userId', data.userId)
-          window.location.href = '/dashboard.html'
-        } else {
-          alert('User not found')
-        }
+        localStorage.setItem('userId', data.userId)
+        window.location.href = 'dashboard.html'
       })
   } catch (err) {
     console.error(err)
