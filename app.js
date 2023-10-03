@@ -1,6 +1,8 @@
 document.getElementById('loginForm').addEventListener('submit', async () => {
-  const email = document.getElementById('email').value
-  const password = document.getElementById('password').value
+  const email = document.getElementById('email').value.trim()
+  const password = document.getElementById('password').value.trim()
+
+  if (!email && !password) return alert('Please fill all the fields')
 
   const data = { email, password }
 

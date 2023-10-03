@@ -47,8 +47,8 @@ app.post('/login', cors(corsOptions), async (req, res) => {
       .from('users')
       .where({ email, password })
       .first()
-    if (!user) return res.status(401).send('User not found')
 
+    if (!user) return res.status(401).send('User not found')
     res.json({ userId: user.id })
   } catch (err) {
     console.error(err)

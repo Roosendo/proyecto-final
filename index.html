@@ -74,16 +74,16 @@
 						<div class="input-box">
 							<input type="submit" class="submit" value="Iniciar Sesi&oacute;n" />
 						</div>
+						<div class="two-col">
+							<div class="one">
+								<input type="checkbox" id="login-check" />
+								<label for="login-check"> Recordarme</label>
+							</div>
+							<div class="two">
+								<label><a href="#">¿Olvid&oacute; su contraseña?</a></label>
+							</div>
+						</div>
 					</form>
-					<div class="two-col">
-						<div class="one">
-							<input type="checkbox" id="login-check" />
-							<label for="login-check"> Recordarme</label>
-						</div>
-						<div class="two">
-							<label><a href="#">¿Olvid&oacute; su contraseña?</a></label>
-						</div>
-					</div>
 				</div>
 
 				<!------------------- registration form -------------------------->
@@ -96,51 +96,53 @@
 						<header>Reg&iacute;strate</header>
 					</div>
 					<div class="two-forms">
-						<div class="input-box">
-							<input
-								type="text"
-								class="input-field"
-								placeholder="Nombre"
-								required
-							/>
-							<i class="bx bx-user"></i>
+						<form id="registerForm">
+							<div class="input-box">
+								<input
+									type="text"
+									class="input-field"
+									placeholder="Nombre"
+									required
+								/>
+								<i class="bx bx-user"></i>
+							</div>
+							<div class="input-box">
+								<input
+									type="text"
+									class="input-field"
+									placeholder="Apellido"
+									required
+								/>
+								<i class="bx bx-user"></i>
+							</div>
 						</div>
 						<div class="input-box">
 							<input
 								type="text"
 								class="input-field"
-								placeholder="Apellido"
+								placeholder="Email"
 								required
 							/>
-							<i class="bx bx-user"></i>
+							<i class="bx bx-envelope"></i>
 						</div>
-					</div>
-					<div class="input-box">
-						<input
-							type="text"
-							class="input-field"
-							placeholder="Email"
-							required
-						/>
-						<i class="bx bx-envelope"></i>
-					</div>
-					<div class="input-box">
-						<input
-							type="password"
-							class="input-field"
-							placeholder="Contraseña"
-							required
-						/>
-						<i class="bx bx-lock-alt"></i>
-					</div>
-					<div class="input-box">
-						<input type="submit" class="submit" value="Register" />
-					</div>
-					<div class="two-col">
-						<div class="one">
-							<input type="checkbox" id="register-check" />
-							<label for="register-check">Recordarme</label>
+						<div class="input-box">
+							<input
+								type="password"
+								class="input-field"
+								placeholder="Contraseña"
+								required
+							/>
+							<i class="bx bx-lock-alt"></i>
 						</div>
+						<div class="input-box">
+							<input type="submit" class="submit" value="Register" />
+						</div>
+						<div class="two-col">
+							<div class="one">
+								<input type="checkbox" id="register-check" />
+								<label for="register-check">Recordarme</label>
+							</div>
+						</form>
 						<div class="two">
 							<label><a href="#">Terminos y Condiciones</a></label>
 						</div>
