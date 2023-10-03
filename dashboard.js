@@ -1,6 +1,4 @@
 const userId = localStorage.getItem('userId')
-if (!userId) window.location.href = 'index.html'
-
 const body = document.querySelector('body')
 const sidebar = body.querySelector('nav')
 const toggle = body.querySelector('.toggle')
@@ -38,7 +36,7 @@ const getUser = async () => {
     .then(data => {
       const p = document.createElement('p')
       p.innerHTML = `
-        <p>Name: ${data.name} || Email: ${data.email}</p>
+        <p class="text">Name: ${data.name} || Email: ${data.email}</p>
       `
       return home.appendChild(p)
     })

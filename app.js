@@ -1,6 +1,6 @@
 document.getElementById('loginForm').addEventListener('submit', async () => {
-  const email = document.getElementById('email').value
-  const password = document.getElementById('password').value
+  const email = document.getElementById('email').value.trim()
+  const password = document.getElementById('password').value.trim()
 
   const data = { email, password }
 
