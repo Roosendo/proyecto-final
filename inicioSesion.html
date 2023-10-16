@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Inicia Sesión</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="CSS/main.css" />
+</head>
+<body class="is-preload no-sidebar">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="index.html">Money Minder</a></h1>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="aboutUs.html">Sobre Nosotros</a></li>
+                        <li class="current"><a href="inicioSesion.html">Inicia Sesión</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+    </div>
+            <!-- Main -->
+    <center>
+        <br><br>
+        <div class="inicio">
+        <div class="form-box">
+        <!-- login form -->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>¿Todavía no tienes una cuenta? <a href="#" onclick="register()">¡Regístrate!</a></span>
+                    <header>Inicia Sesión</header>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="email" placeholder="Email" required />
+                        <i class="bx bx-user"></i>
+                    </div>
+                            
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="password" placeholder="Contraseña" required />
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Iniciar Sesión" />
+                    </div>
+                            
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check" />
+                            <label for="login-check">Recordarme</label>
+                        </div>
+                        
+                        <div class="two">
+                            <label><a href="#">¿Olvidó su contraseña?</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        
+    </center>
+            <style>
+                /* Agrega tus estilos adicionales aquí si es necesario */
+            </style>
+            <script>
+                function myMenuFunction() {
+                    var i = document.getElementById('navMenu');
+        
+                    if (i.className === 'nav-menu') {
+                        i.className += ' responsive';
+                    } else {
+                        i.className = 'nav-menu';
+                    }
+                }
+        
+                var a = document.getElementById('loginBtn');
+                var b = document.getElementById('registerBtn');
+                var x = document.getElementById('login');
+                var y = document.getElementById('register');
+        
+                function login() {
+                    x.style.left = '4px';
+                    y.style.right = '-520px';
+                    a.className += ' white-btn';
+                    b.className = 'btn';
+                    x.style.opacity = 1;
+                    y.style.opacity = 0;
+                }
+        
+                function register() {
+                    x.style.left = '-510px';
+                    y.style.right = '5px';
+                    a.className = 'btn';
+                    b.className += ' white-btn';
+                    x.style.opacity = 0;
+                    y.style.opacity = 1;
+                }
+            </script>
+</body>
+</html>
+
+

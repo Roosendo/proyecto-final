@@ -1,0 +1,4 @@
+# para todos identar igual
+[*]
+indent_style = tab
+indent_size = 2
